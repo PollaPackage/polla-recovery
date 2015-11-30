@@ -12,12 +12,12 @@
 
     "autoload": {
         "psr-4": {
-            "Rentalhost\\PollaAuth\\": "src/PollaAuth/"
+            "Rentalhost\\PollaRecovery\\": "src/PollaRecovery/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rentalhost\\PollaAuth\\Test\\": "tests/PollaAuth/"
+            "Rentalhost\\PollaRecovery\\Test\\": "tests/PollaRecovery/"
         }
     },
 
