@@ -53,11 +53,12 @@ class RecoveryCheckTest extends Base
      */
     public function dataCheck()
     {
-        $accessOriginal            = new RecoveryAccess('aaabbb', 'token', 0);
-        $accessOriginalRehashed    = new RecoveryAccess('aaabbb', 'token', 0);
-        $accessPasswordOne         = new RecoveryAccess('123456', 'token', 0);
-        $accessPasswordOneRehashed = new RecoveryAccess('123456', 'token', 0);
-        $accessPasswordTwo         = new RecoveryAccess('abcdef', 'token', 0);
+        $accessOriginal             = new RecoveryAccess('aaabbb', 'token', 0);
+        $accessOriginalRehashed     = new RecoveryAccess('aaabbb', 'token', 0);
+        $accessPasswordOne          = new RecoveryAccess('123456', 'token', 0);
+        $accessPasswordOneRehashed  = new RecoveryAccess('123456', 'token', 0);
+        $accessPasswordOnePrehashed = new RecoveryAccess(null, 'token', 0, $accessPasswordOneRehashed->getHash());
+        $accessPasswordTwo          = new RecoveryAccess('abcdef', 'token', 0);
 
         $checkerDefault = new RecoveryCheck;
         $checkerDefault->setValidity(24);
@@ -109,6 +110,13 @@ class RecoveryCheckTest extends Base
                 $checkerDefault,
                 $accessPasswordOneRehashed,
                 $accessPasswordOne,
+                'success',
+                [ 'recovered' => true ],
+            ],
+            [
+                $checkerDefault,
+                $accessPasswordOneRehashed,
+                $accessPasswordOnePrehashed,
                 'success',
                 [ 'recovered' => true ],
             ],

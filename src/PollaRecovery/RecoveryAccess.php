@@ -38,12 +38,14 @@ class RecoveryAccess
      * @param string|null $password  Recovery password.
      * @param string|null $token     Recovery token.
      * @param int|null    $timestamp Recovery timestamp.
+     * @param string|null $hash      Recovery pre-hashed password.
      */
-    public function __construct($password = null, $token = null, $timestamp = null)
+    public function __construct($password = null, $token = null, $timestamp = null, $hash = null)
     {
         $this->password  = (string) $password;
         $this->token     = $token !== null ? (string) $token : md5(random_bytes(255));
         $this->timestamp = $timestamp !== null ? (int) $timestamp : time();
+        $this->hash      = $hash;
     }
 
     /**
