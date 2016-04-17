@@ -49,20 +49,6 @@ class RecoveryAccess
     }
 
     /**
-     * Generates and returns the hashed password.
-     * Should returns null if none password is set.
-     * @return string|null
-     */
-    public function getHash()
-    {
-        if ($this->password && !$this->hash) {
-            $this->hash = Helper::passwordHash($this->password);
-        }
-
-        return $this->hash;
-    }
-
-    /**
      * Generate a new recovery access.
      * Can receives a own expected password or will generate a random 12 characters password.
      *
@@ -77,5 +63,19 @@ class RecoveryAccess
         }
 
         return new self($password);
+    }
+
+    /**
+     * Generates and returns the hashed password.
+     * Should returns null if none password is set.
+     * @return string|null
+     */
+    public function getHash()
+    {
+        if ($this->password && !$this->hash) {
+            $this->hash = Helper::passwordHash($this->password);
+        }
+
+        return $this->hash;
     }
 }

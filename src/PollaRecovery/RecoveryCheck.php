@@ -24,52 +24,6 @@ class RecoveryCheck
     private $originalPassword;
 
     /**
-     * Set validity in hours.
-     * Set null to allow any validity hours.
-     *
-     * @param int|null $validity Validity hours.
-     */
-    public function setValidity($validity)
-    {
-        $this->validity = (int) $validity;
-    }
-
-    /**
-     * Get validity in hours.
-     * @return int
-     */
-    public function getValidity()
-    {
-        return $this->validity;
-    }
-
-    /**
-     * Set the original password as alternative.
-     * Set null to disable this feature.
-     *
-     * @param RecoveryAccess|string|null $originalPassword The original password.
-     */
-    public function setOriginalPassword($originalPassword)
-    {
-        if ($originalPassword === null) {
-            $this->originalPassword = null;
-
-            return;
-        }
-
-        $this->originalPassword = Helper::passwordHash($originalPassword);
-    }
-
-    /**
-     * Returns if original password is accepted.
-     * @return bool
-     */
-    public function isOriginalPasswordAllowed()
-    {
-        return (bool) $this->originalPassword;
-    }
-
-    /**
      * Check if your recovery access can match with expected recovery access.
      *
      * @param RecoveryAccess $yourRecoveryAccess     Your recovery access.
@@ -116,5 +70,51 @@ class RecoveryCheck
 
         // Mark password as incorrect.
         return new Result(false, 'password.incorrect');
+    }
+
+    /**
+     * Get validity in hours.
+     * @return int
+     */
+    public function getValidity()
+    {
+        return $this->validity;
+    }
+
+    /**
+     * Set validity in hours.
+     * Set null to allow any validity hours.
+     *
+     * @param int|null $validity Validity hours.
+     */
+    public function setValidity($validity)
+    {
+        $this->validity = (int) $validity;
+    }
+
+    /**
+     * Returns if original password is accepted.
+     * @return bool
+     */
+    public function isOriginalPasswordAllowed()
+    {
+        return (bool) $this->originalPassword;
+    }
+
+    /**
+     * Set the original password as alternative.
+     * Set null to disable this feature.
+     *
+     * @param RecoveryAccess|string|null $originalPassword The original password.
+     */
+    public function setOriginalPassword($originalPassword)
+    {
+        if ($originalPassword === null) {
+            $this->originalPassword = null;
+
+            return;
+        }
+
+        $this->originalPassword = Helper::passwordHash($originalPassword);
     }
 }

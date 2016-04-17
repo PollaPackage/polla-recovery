@@ -11,18 +11,6 @@ use Rentalhost\PollaRecovery\RecoveryAccess;
 class RecoveryAccessTest extends Base
 {
     /**
-     * Test public properties.
-     * @coversNothing
-     */
-    public function testPublicProperties()
-    {
-        static::assertClassHasAttribute('hash', RecoveryAccess::class);
-        static::assertClassHasAttribute('password', RecoveryAccess::class);
-        static::assertClassHasAttribute('timestamp', RecoveryAccess::class);
-        static::assertClassHasAttribute('token', RecoveryAccess::class);
-    }
-
-    /**
      * Test __construct method.
      *
      * @covers Rentalhost\PollaRecovery\RecoveryAccess::__construct
@@ -74,5 +62,17 @@ class RecoveryAccessTest extends Base
         $recoveryAccess = RecoveryAccess::generate();
 
         static::assertNotNull($recoveryAccess->getHash());
+    }
+
+    /**
+     * Test public properties.
+     * @coversNothing
+     */
+    public function testPublicProperties()
+    {
+        static::assertClassHasAttribute('hash', RecoveryAccess::class);
+        static::assertClassHasAttribute('password', RecoveryAccess::class);
+        static::assertClassHasAttribute('timestamp', RecoveryAccess::class);
+        static::assertClassHasAttribute('token', RecoveryAccess::class);
     }
 }

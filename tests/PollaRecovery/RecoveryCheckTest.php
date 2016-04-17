@@ -12,43 +12,6 @@ use Rentalhost\PollaRecovery\RecoveryCheck;
 class RecoveryCheckTest extends Base
 {
     /**
-     * Test getValidity, testValidity methods.
-     *
-     * @covers Rentalhost\PollaRecovery\RecoveryCheck::setValidity
-     * @covers Rentalhost\PollaRecovery\RecoveryCheck::getValidity
-     */
-    public function testValidity()
-    {
-        $recoveryChecker = new RecoveryCheck;
-
-        static::assertNull($recoveryChecker->getValidity());
-
-        $recoveryChecker->setValidity(24);
-
-        static::assertSame(24, $recoveryChecker->getValidity());
-    }
-
-    /**
-     * Test check method.
-     *
-     * @param RecoveryCheck|null $recoveryChecker        The recovery checker to use.
-     * @param RecoveryAccess     $yourRecoveryAccess     Your recovery access parameters.
-     * @param RecoveryAccess     $expectedRecoveryAccess Expected recovery access parameters.
-     * @param string             $resultMessage          Expected result message.
-     * @param array|null         $resultData             Expected result data.
-     *
-     * @covers       Rentalhost\PollaRecovery\RecoveryCheck::check
-     * @dataProvider dataCheck
-     */
-    public function testCheck($recoveryChecker, $yourRecoveryAccess, $expectedRecoveryAccess, $resultMessage, $resultData = null)
-    {
-        $recoveryCheckerResult = $recoveryChecker->check($yourRecoveryAccess, $expectedRecoveryAccess);
-
-        static::assertSame($resultMessage, $recoveryCheckerResult->getMessage());
-        static::assertSame($resultData, $recoveryCheckerResult->getData());
-    }
-
-    /**
      * Data provider.
      */
     public function dataCheck()
@@ -139,6 +102,26 @@ class RecoveryCheckTest extends Base
     }
 
     /**
+     * Test check method.
+     *
+     * @param RecoveryCheck|null $recoveryChecker        The recovery checker to use.
+     * @param RecoveryAccess     $yourRecoveryAccess     Your recovery access parameters.
+     * @param RecoveryAccess     $expectedRecoveryAccess Expected recovery access parameters.
+     * @param string             $resultMessage          Expected result message.
+     * @param array|null         $resultData             Expected result data.
+     *
+     * @covers       Rentalhost\PollaRecovery\RecoveryCheck::check
+     * @dataProvider dataCheck
+     */
+    public function testCheck($recoveryChecker, $yourRecoveryAccess, $expectedRecoveryAccess, $resultMessage, $resultData = null)
+    {
+        $recoveryCheckerResult = $recoveryChecker->check($yourRecoveryAccess, $expectedRecoveryAccess);
+
+        static::assertSame($resultMessage, $recoveryCheckerResult->getMessage());
+        static::assertSame($resultData, $recoveryCheckerResult->getData());
+    }
+
+    /**
      * Test setOriginalPassword and isOriginalPasswordAllowed methods.
      *
      * @covers       Rentalhost\PollaRecovery\RecoveryCheck::setOriginalPassword
@@ -157,5 +140,22 @@ class RecoveryCheckTest extends Base
         $checkerDefault->setOriginalPassword(null);
 
         static::assertFalse($checkerDefault->isOriginalPasswordAllowed());
+    }
+
+    /**
+     * Test getValidity, testValidity methods.
+     *
+     * @covers Rentalhost\PollaRecovery\RecoveryCheck::setValidity
+     * @covers Rentalhost\PollaRecovery\RecoveryCheck::getValidity
+     */
+    public function testValidity()
+    {
+        $recoveryChecker = new RecoveryCheck;
+
+        static::assertNull($recoveryChecker->getValidity());
+
+        $recoveryChecker->setValidity(24);
+
+        static::assertSame(24, $recoveryChecker->getValidity());
     }
 }
