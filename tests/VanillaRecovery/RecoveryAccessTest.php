@@ -1,19 +1,19 @@
 <?php
 
-namespace Rentalhost\PollaRecovery\Test;
+namespace Rentalhost\VanillaRecovery\Test;
 
-use Rentalhost\PollaRecovery\RecoveryAccess;
+use Rentalhost\VanillaRecovery\RecoveryAccess;
 
 /**
  * Class RecoveryAccessTest
- * @package Rentalhost\PollaRecovery\Test
+ * @package Rentalhost\VanillaRecovery\Test
  */
 class RecoveryAccessTest extends Base
 {
     /**
      * Test __construct method.
      *
-     * @covers Rentalhost\PollaRecovery\RecoveryAccess::__construct
+     * @covers Rentalhost\VanillaRecovery\RecoveryAccess::__construct
      */
     public function testConstruct()
     {
@@ -35,7 +35,7 @@ class RecoveryAccessTest extends Base
     /**
      * Test generate method.
      *
-     * @covers Rentalhost\PollaRecovery\RecoveryAccess::generate
+     * @covers Rentalhost\VanillaRecovery\RecoveryAccess::generate
      */
     public function testGenerate()
     {
@@ -51,7 +51,7 @@ class RecoveryAccessTest extends Base
     /**
      * Test getHash method.
      *
-     * @covers Rentalhost\PollaRecovery\RecoveryAccess::getHash
+     * @covers Rentalhost\VanillaRecovery\RecoveryAccess::getHash
      */
     public function testGetHash()
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Rentalhost\PollaRecovery\Test;
+namespace Rentalhost\VanillaRecovery\Test;
 
-use Rentalhost\PollaRecovery\RecoveryAccess;
-use Rentalhost\PollaRecovery\RecoveryCheck;
+use Rentalhost\VanillaRecovery\RecoveryAccess;
+use Rentalhost\VanillaRecovery\RecoveryCheck;
 
 /**
  * Class RecoveryCheckTest
- * @package Rentalhost\PollaRecovery\Test
+ * @package Rentalhost\VanillaRecovery\Test
  */
 class RecoveryCheckTest extends Base
 {
@@ -110,7 +110,7 @@ class RecoveryCheckTest extends Base
      * @param string             $resultMessage          Expected result message.
      * @param array|null         $resultData             Expected result data.
      *
-     * @covers       Rentalhost\PollaRecovery\RecoveryCheck::check
+     * @covers       Rentalhost\VanillaRecovery\RecoveryCheck::check
      * @dataProvider dataCheck
      */
     public function testCheck($recoveryChecker, $yourRecoveryAccess, $expectedRecoveryAccess, $resultMessage, $resultData = null)
@@ -124,8 +124,8 @@ class RecoveryCheckTest extends Base
     /**
      * Test setOriginalPassword and isOriginalPasswordAllowed methods.
      *
-     * @covers       Rentalhost\PollaRecovery\RecoveryCheck::setOriginalPassword
-     * @covers       Rentalhost\PollaRecovery\RecoveryCheck::isOriginalPasswordAllowed
+     * @covers       Rentalhost\VanillaRecovery\RecoveryCheck::setOriginalPassword
+     * @covers       Rentalhost\VanillaRecovery\RecoveryCheck::isOriginalPasswordAllowed
      */
     public function testOriginalPassword()
     {
@@ -145,8 +145,8 @@ class RecoveryCheckTest extends Base
     /**
      * Test getValidity, testValidity methods.
      *
-     * @covers Rentalhost\PollaRecovery\RecoveryCheck::setValidity
-     * @covers Rentalhost\PollaRecovery\RecoveryCheck::getValidity
+     * @covers Rentalhost\VanillaRecovery\RecoveryCheck::setValidity
+     * @covers Rentalhost\VanillaRecovery\RecoveryCheck::getValidity
      */
     public function testValidity()
     {

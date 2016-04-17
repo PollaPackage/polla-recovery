@@ -1,3 +1,3 @@
-# polla-recovery
+# vanilla-recovery
 
-The polla-recovery will help you to recovery user access.
+The vanilla-recovery will help you to recovery user access.

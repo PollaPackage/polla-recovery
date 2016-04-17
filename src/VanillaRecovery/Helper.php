@@ -1,10 +1,10 @@
 <?php
 
-namespace Rentalhost\PollaRecovery;
+namespace Rentalhost\VanillaRecovery;
 
 /**
  * Class Helper
- * @package Rentalhost\PollaRecovery
+ * @package Rentalhost\VanillaRecovery
  */
 class Helper
 {
@@ -29,8 +29,8 @@ class Helper
             $hashOptions = [ ];
 
             // Overwrite the default cost.
-            if (defined('POLLA_RECOVERY_HASH_COST')) {
-                $hashOptions['cost'] = POLLA_RECOVERY_HASH_COST;
+            if (defined('VANILLA_RECOVERY_HASH_COST')) {
+                $hashOptions['cost'] = VANILLA_RECOVERY_HASH_COST;
             }
 
             return (string) password_hash($password, PASSWORD_BCRYPT, $hashOptions);

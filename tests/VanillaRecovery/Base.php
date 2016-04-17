@@ -1,14 +1,13 @@
 <?php
 
-namespace Rentalhost\PollaRecovery\Test;
+namespace Rentalhost\VanillaRecovery\Test;
 
 use PHPUnit_Framework_TestCase;
 
 /**
  * Class Base
- * @package Rentalhost\PollaRecovery\Test
+ * @package Rentalhost\VanillaRecovery\Test
  */
 class Base extends PHPUnit_Framework_TestCase
 {
-
 }

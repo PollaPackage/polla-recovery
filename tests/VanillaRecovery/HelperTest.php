@@ -1,20 +1,20 @@
 <?php
 
-namespace Rentalhost\PollaRecovery\Test;
+namespace Rentalhost\VanillaRecovery\Test;
 
-use Rentalhost\PollaRecovery\Helper;
-use Rentalhost\PollaRecovery\RecoveryAccess;
+use Rentalhost\VanillaRecovery\Helper;
+use Rentalhost\VanillaRecovery\RecoveryAccess;
 
 /**
  * Class HelperTestTest
- * @package Rentalhost\PollaRecovery\Test
+ * @package Rentalhost\VanillaRecovery\Test
  */
 class HelperTest extends Base
 {
     /**
      * Test passwordHash method.
      *
-     * @covers Rentalhost\PollaRecovery\Helper::passwordHash
+     * @covers Rentalhost\VanillaRecovery\Helper::passwordHash
      */
     public function testPasswordHash()
     {

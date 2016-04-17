@@ -1,6 +1,6 @@
 {
-    "name": "rentalhost/polla-recovery",
-    "description": "The polla-recovery will help you to recovery user access.",
+    "name": "rentalhost/vanilla-recovery",
+    "description": "The vanilla-recovery will help you to recovery user access.",
 
     "require": {
         "rentalhost/vanilla-result": "~0.1",
@@ -12,12 +12,12 @@
 
     "autoload": {
         "psr-4": {
-            "Rentalhost\\PollaRecovery\\": "src/PollaRecovery/"
+            "Rentalhost\\VanillaRecovery\\": "src/VanillaRecovery/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rentalhost\\PollaRecovery\\Test\\": "tests/PollaRecovery/"
+            "Rentalhost\\VanillaRecovery\\Test\\": "tests/VanillaRecovery/"
         }
     },
 

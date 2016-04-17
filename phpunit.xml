@@ -2,15 +2,15 @@
 <phpunit bootstrap="vendor/autoload.php" colors="true">
     <testsuites>
         <testsuite name="Application Test Suite">
-            <directory>tests/PollaRecovery/</directory>
+            <directory>tests/VanillaRecovery/</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">src/PollaRecovery/</directory>
+            <directory suffix=".php">src/VanillaRecovery/</directory>
         </whitelist>
     </filter>
     <php>
-        <const name="POLLA_RECOVERY_HASH_COST" value="4"/>
+        <const name="VANILLA_RECOVERY_HASH_COST" value="4"/>
     </php>
 </phpunit>

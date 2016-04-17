@@ -1,12 +1,12 @@
 <?php
 
-namespace Rentalhost\PollaRecovery;
+namespace Rentalhost\VanillaRecovery;
 
 use Rentalhost\VanillaResult\Result;
 
 /**
  * Class RecoveryChecker
- * @package Rentalhost\PollaRecovery
+ * @package Rentalhost\VanillaRecovery
  */
 class RecoveryCheck
 {

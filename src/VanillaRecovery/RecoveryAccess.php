@@ -1,10 +1,10 @@
 <?php
 
-namespace Rentalhost\PollaRecovery;
+namespace Rentalhost\VanillaRecovery;
 
 /**
  * Class RecoveryAccess
- * @package Rentalhost\PollaRecovery
+ * @package Rentalhost\VanillaRecovery
  */
 class RecoveryAccess
 {
