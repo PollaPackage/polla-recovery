@@ -3,11 +3,11 @@
     "description": "The polla-recovery will help you to recovery user access.",
 
     "require": {
-        "rentalhost/vanilla-result": "<0.2"
+        "rentalhost/vanilla-result": "~0.1",
+        "paragonie/random_compat": "~2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "laravel/framework": "^5.1"
+        "phpunit/phpunit": "~5.3"
     },
 
     "autoload": {

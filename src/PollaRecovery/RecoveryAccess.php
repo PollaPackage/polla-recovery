@@ -59,7 +59,7 @@ class RecoveryAccess
     public static function generate($password = null)
     {
         if ($password === null) {
-            $password = str_random(12);
+            $password = random_bytes(12);
         }
 
         return new self($password);
